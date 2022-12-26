@@ -1,5 +1,5 @@
-# Upbit API를 사용하여 만든 파이썬기반 가상화페 자동거래 시스템 입니다.
-# Crypto auto trade program using "Upbit" API
+# Upbit API를 사용하여 만든 파이썬기반 가상화페 자동거래 시스템 입니다.(KR)
+# Crypto auto trade program using "Upbit" API(EN)
 
 ### 주요기능
 ### What you can do
