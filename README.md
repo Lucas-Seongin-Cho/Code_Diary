@@ -1,21 +1,44 @@
-# Upbit API를 사용하여 만든 파이썬기반 가상화페 자동거래 시스템 입니다.(KR)
+# Upbit Auto Trading Bot
 
-### 주요기능
-- 거래하기 원하는 코인 모의 투자가능
-    
-- Back Test 파일 엑셀로 변환 후 시각화
-   
-- MA(이동평균선) 자유롭게 변경후 사용 가능
+This Python script is an example of a simple automated trading bot using the Upbit API. The bot implements a basic strategy known as the "Moving Average and Bollinger Bands Strategy" to make buy/sell decisions for Bitcoin (BTC) against the Korean Won (KRW). The strategy involves the following components:
 
-# Crypto auto trade program using "Upbit" API(EN)
+- **Moving Average (MA15):** The bot calculates the 15-day simple moving average of the closing prices to identify trends.
 
-### What you can do
-- Mock-investment is available.
-    
-- Visualize the "Back Test" file using Excel.
-   
-- MA(Moving Average line) is editable.
+- **Bollinger Bands:** The target price for buying is determined based on the Bollinger Bands strategy, where the target price is set at the previous day's closing price plus half of the day's high-low range.
 
-#### Preview
+- **Buy Condition:** If the current price is higher than both the target price and the 15-day moving average, and the available KRW balance is greater than 5000 KRW, the bot executes a market buy order for Bitcoin.
 
-![화면 캡처 2022-08-31 200903](https://user-images.githubusercontent.com/93990321/187811286-e71e59ff-3580-41aa-bf0d-a4c5d6518c01.png)
+- **Sell Condition:** If the current time is outside the specified trading time window (9:00 AM to 8:59:50 AM next day) and the Bitcoin balance is greater than 0.00008 BTC, the bot executes a market sell order for Bitcoin.
+
+## Prerequisites
+
+To run this script, you need to have:
+
+- Python installed on your machine.
+- The required Python packages installed. You can install them using:
+
+   ```bash
+   pip install pyupbit
+   ```
+
+## Usage
+
+1. Set your Upbit API access and secret keys in the `access` and `secret` variables.
+2. Make sure you have sufficient funds (KRW) in your Upbit account for trading.
+3. Run the script:
+
+   ```bash
+   python upbit_auto_trader.py
+   ```
+
+   The script will start executing the trading strategy based on the defined conditions.
+
+## Important Note
+
+- This script is a basic example and might not be suitable for actual trading without further customization and thorough testing.
+- It's essential to understand the risks involved in automated trading and use this script responsibly.
+- Make sure to comply with Upbit's terms of service and API usage policies.
+
+## Disclaimer
+
+This trading bot script is provided for educational and informational purposes only. Trading cryptocurrencies involves significant risk, and past performance is not indicative of future results. The author is not responsible for any losses incurred while using this script. Use it at your own risk and discretion.
